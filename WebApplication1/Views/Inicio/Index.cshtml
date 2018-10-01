@@ -1,0 +1,30 @@
+﻿@using WebApplication1.Models
+@using WebApplication1.Helpers
+@model List<EntProduct>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div style="max-width:60%; height:auto; font-size: 1vw; padding:0px 5px 10px 2px; border-bottom:dashed thick;"> 
+        @foreach(EntProduct x in Model)
+        {
+            Html.RenderPartial("~/Views/DetalleProducto.cshtml", x);
+        }
+    </div>
+
+    <div>
+        @Html.getDate()
+    </div>
+    <div>
+        @Html.ActionLink("Agregar producto", "AddProduct", "Product")
+    </div>
+</body>
+</html>

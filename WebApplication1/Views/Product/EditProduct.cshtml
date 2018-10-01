@@ -1,0 +1,31 @@
+﻿@using WebApplication1.Models
+@model WebApplication1.Models.EntProduct
+@using System.Web.Mvc;
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>EditProduct</title>
+</head>
+<body>
+    <div> 
+        @using (Html.BeginForm("SaveProduct", "Product"))
+        {
+            @Html.TextBoxFor(x => x.id, new { autocomplete = "off", placeholder = "id" })
+            @Html.ValidationMessageFor(x => x.id)
+            @Html.TextBoxFor(x => x.descripcion, new { autocomplete = "off", placeholder = "descripcion" })
+            @Html.ValidationMessageFor(x => x.descripcion)
+            @Html.TextBoxFor(x => x.price, new { autocomplete = "off", placeholder = "precio" })
+            @Html.ValidationMessageFor(x => x.price)
+            <input type="submit" value="Aceptar" />
+        }
+        @Html.ValidationMessage("general")
+    </div>
+</body>
+</html>

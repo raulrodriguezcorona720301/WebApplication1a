@@ -21,7 +21,13 @@ namespace WebApplication1
 
             routes.MapRoute(
                 null,
-                "Product/EditProductById/{guidId}",
+                "SaveProduct",
+                new { controller="Product", action="SaveProduct"}
+            );
+
+            routes.MapRoute(
+                null,
+                "{guidId}",
                 new { controller = "Product", action= "EditProductById"}
             );
 

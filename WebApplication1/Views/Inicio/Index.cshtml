@@ -1,6 +1,6 @@
 ﻿@using WebApplication1.Models
 @using WebApplication1.Helpers
-@model List<EntProduct>
+@model List<EntProductVm>
 @{
     Layout = null;
 }
@@ -16,7 +16,7 @@
     <div style="width:100%;">MVC Super test</div>
     <div style="width:100%;">Cambio a C y en un nuevo intento</div>
     <div style="max-width:60%; height:auto; font-size: 1vw; padding:0px 5px 10px 2px; border-bottom:dashed thick;"> 
-        @foreach(EntProduct x in Model)
+        @foreach(EntProductVm x in Model)
         {
             Html.RenderPartial("~/Views/DetalleProducto.cshtml", x);
         }

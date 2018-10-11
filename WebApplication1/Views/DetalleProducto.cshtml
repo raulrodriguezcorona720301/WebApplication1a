@@ -1,12 +1,12 @@
 ﻿@using WebApplication1.Models;
-@model EntProduct
+@model EntProductVm
 
 <div style="display:inline-block">
     <div style="display:block; max-width:100%;">
         @Model.id
     </div>
     <div style="display:block; max-width:100%;">
-        <a href=@Url.Action("EditProductById", "Product", new { guidId = Model.id})>@Model.descripcion</a>
+        <a href="~/@Model.id">@Model.descripcion</a>
     </div>
     <div style="display:block; max-width:100%;">
         @Model.price.ToString()

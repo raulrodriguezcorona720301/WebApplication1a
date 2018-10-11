@@ -1,10 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using WebApplication1.Models;
 using WebApplication1.Business;
+using WebApplication1.Entities;
 
 namespace WebApplication1.Controllers
 {
@@ -15,7 +14,7 @@ namespace WebApplication1.Controllers
             return View("~/Views/Product/EditProduct.cshtml", null);
         }
 
-        public ActionResult EditProduct(EntProduct p)
+        public ActionResult EditProduct(EntProductVm p)
         {
             return View("~/Views/Product/EditProduct.cshtml", p);
         }
@@ -28,15 +27,15 @@ namespace WebApplication1.Controllers
                 l = (List<EntProduct>)Session["l"];
             }
             CtrlProduct ctrlProduct = new CtrlProduct();
-            EntProduct p = ctrlProduct.getProductById(l, guidId);
+            EntProductVm p = Tools.Tools.factoryModel(ctrlProduct.getProductById(l, guidId));
             return View("~/Views/Product/EditProduct.cshtml", p);
         }
 
         [HttpPost]
-        public ActionResult SaveProduct([Bind(Include ="id,descripcion,price")] EntProduct p)
+        public ActionResult SaveProduct([Bind(Include = "id,descripcion,price")] EntProductVm p)
         {
             List<EntProduct> l = null;
-            if(Session["l"]!=null)
+            if (Session["l"] != null)
             {
                 l = (List<EntProduct>)Session["l"];
             }
@@ -45,17 +44,17 @@ namespace WebApplication1.Controllers
                 CtrlProduct ctrlProduct = new CtrlProduct();
                 l = ctrlProduct.getCatalog(null);
             }
-            if(ModelState.IsValid)
+            if (ModelState.IsValid)
             {
                 EntProduct r = l.Where(x => x.id == p.id).FirstOrDefault();
                 if (r == null)
                 {
-                    l.Add(p);
+                    l.Add(Tools.Tools.factoryEntity(p));
                 }
                 else
                 {
                     l.Remove(r);
-                    l.Add(p);
+                    l.Add(Tools.Tools.factoryEntity(p));
                 }
                 Session["l"] = l;
                 return RedirectToAction("Index", "Inicio");

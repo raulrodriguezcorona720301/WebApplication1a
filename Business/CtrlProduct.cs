@@ -1,8 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Web;
-using WebApplication1.Models;
+using System.Collections.Generic;
+using WebApplication1.Entities;
 using WebApplication1.Data;
 
 namespace WebApplication1.Business
@@ -11,19 +10,19 @@ namespace WebApplication1.Business
     {
         public List<EntProduct> getCatalog(List<EntProduct> l)
         {
-            ADOProduct adop = new ADOProduct();
+            WebApplication1.Data.ProductADO adop = new WebApplication1.Data.ProductADO();
             return adop.getCatalog(l);
         }
 
         public List<EntProduct> addProduct(List<EntProduct> l, EntProduct p)
         {
-            ADOProduct adop = new ADOProduct();
+            WebApplication1.Data.ProductADO adop = new WebApplication1.Data.ProductADO();
             return adop.addProduct(l, p);
         }
 
         public EntProduct getProductById(List<EntProduct> l, string id)
         {
-            ADOProduct adop = new ADOProduct();
+            WebApplication1.Data.ProductADO adop = new WebApplication1.Data.ProductADO();
             return adop.getProductById(l, id);
         }
     }

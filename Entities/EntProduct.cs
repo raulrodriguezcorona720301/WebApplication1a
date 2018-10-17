@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace WebApplication1.Entities
+﻿namespace WebApplication1.Entities
 {
     public class EntProduct
     {

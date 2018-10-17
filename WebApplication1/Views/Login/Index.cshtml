@@ -1,0 +1,40 @@
+﻿@model WebApplication1.Models.EntLoginVm
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<script src="../scripts/jquery-3.3.1.min.js" type="text/javascript"></script>
+<script src="../scripts/functionsWA1.js" type="text/javascript"></script>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Iniciar sesion</title>
+</head>
+<body>
+    <div>
+            @using (Html.BeginForm("Index", "Login", FormMethod.Post, new { autocomplete="off", id="loginForm"}))
+            {
+                <input type="hidden" name="tokenId" id="tokenId"  value="" />
+                <div>
+                    @Html.TextBoxFor(x => x.UsuarioSup, new { autocomplete = "off", placeholder = "correo" })
+                    @Html.ValidationMessageFor(x => x.UsuarioSup)
+                </div>
+                <div>
+                    @Html.PasswordFor(x => x.PasswordSup, new { autocomplete = "off", placeholder = "******" })
+                    @Html.ValidationMessageFor(x => x.PasswordSup)
+                </div>
+                <div>
+                    @Html.ValidationMessage("generalError")
+                </div>
+                <div>
+                    <button>Ingresar</button>
+                </div>
+            }
+    </div>
+</body>
+</html>
+<script language="javascript" type="text/javascript">
+    btnIngresar();
+</script>

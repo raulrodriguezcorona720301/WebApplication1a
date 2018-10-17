@@ -21,6 +21,18 @@ namespace WebApplication1
 
             routes.MapRoute(
                 null,
+                "Login",
+                new { controller ="Login", action="Index"}
+            );
+
+            routes.MapRoute(
+                null,
+                "Login/Index",
+                new { controller = "Login", action = "Index" }
+            );
+
+            routes.MapRoute(
+                null,
                 "SaveProduct",
                 new { controller="Product", action="SaveProduct"}
             );

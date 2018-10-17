@@ -1,9 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Web.Mvc;
 using WebApplication1.Business;
-using WebApplication1.Models;
 using WebApplication1.Entities;
-using WebApplication1.Tools;
 
 namespace WebApplication1.Controllers
 {

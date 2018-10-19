@@ -4,7 +4,7 @@ using System;
 
 namespace WebApplication1.Models
 {
-    [Bind (Include = "UsuarioSup, PasswordSup, tokenId")]
+    [Bind (Include = "UsuarioSup, PasswordSup, tokenId, fn, yesNo, source")]
     public class EntLoginVm
     {
         [Required(ErrorMessage = "Correo requerido")]
@@ -24,5 +24,13 @@ namespace WebApplication1.Models
         [Required]
         [RegularExpression(@"^[0-9a-zA-Z-]*$", ErrorMessage ="Cadena Invalida")]
         public string tokenId { get; set; }
+
+        [Required]
+        public string fn { get; set; }
+
+        [Required]
+        public string yesNo { get; set; }
+
+        public string source { get; set; }
     }
 }

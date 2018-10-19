@@ -26,7 +26,14 @@ namespace WebApplication1.Controllers
         }
 
         [HttpPost]
-        public ActionResult Index([Bind(Include = "UsuarioSup, PasswordSup, tokenId")] EntLoginVm loginVm)
+        public ContentResult setFn()
+        {
+            string fn = "xyz";
+            return Content(fn);
+        }
+
+        [HttpPost]
+        public ActionResult Index([Bind(Include = "UsuarioSup, PasswordSup, tokenId, fn, yesNo, source")] EntLoginVm loginVm)
         {
             bool proceed = false;
             if(ModelState.IsValid)

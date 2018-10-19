@@ -88,9 +88,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="assets\styles\st1.css" />
     <Content Include="Global.asax" />
-    <Content Include="scripts\functionsWA1.js" />
-    <Content Include="scripts\jquery-3.3.1.min.js" />
+    <Content Include="assets\scripts\functionsWA1.js" />
+    <Content Include="assets\scripts\jquery-3.3.1.min.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -111,7 +112,7 @@
     <Content Include="Views\web.config" />
     <None Include="packages.config" />
     <Content Include="Views\Inicio\Index.cshtml" />
-    <Content Include="Views\DetalleProducto.cshtml" />
+    <Content Include="Views\DetalleProducto\Index.cshtml" />
     <Content Include="Views\Product\EditProduct.cshtml" />
     <Content Include="Views\Login\Index.cshtml" />
     <None Include="Web.Debug.config">

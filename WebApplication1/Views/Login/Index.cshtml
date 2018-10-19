@@ -4,19 +4,39 @@
 }
 
 <!DOCTYPE html>
-<script src="../scripts/jquery-3.3.1.min.js" type="text/javascript"></script>
-<script src="../scripts/functionsWA1.js" type="text/javascript"></script>
 
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
+    <script src="../assets/scripts/jquery-3.3.1.min.js" type="text/javascript"></script>
+    <script src="../assets/scripts/functionsWA1.js" type="text/javascript"></script>
+    <link href="../assets/styles/st1.css" rel="stylesheet" type="text/css" />
     <title>Iniciar sesion</title>
 </head>
 <body>
     <div>
-            @using (Html.BeginForm("Index", "Login", FormMethod.Post, new { autocomplete="off", id="loginForm"}))
+            @using (Html.BeginForm("Index", "Login", new { source = "form" }, FormMethod.Post, new {autocomplete ="off", id="loginForm"}))
             {
                 <input type="hidden" name="tokenId" id="tokenId"  value="" />
+                <input type="hidden" name="fn" id="fn" value="" />
+                <input type="hidden" name="fnA" id="fnA" value="" />
+                <div>
+                    <select id="accessId" name="accessId" onchange="setFn2();">
+                        <option value="asd">
+                            Normal
+                        </option>
+                        <option value="fgh">
+                            Preferente
+                        </option>
+                    </select>
+                    @Html.DropDownListFor(x=> x.yesNo, new[]
+                       {
+                            new SelectListItem(){ Text = "si", Value="true"},
+                            new SelectListItem(){ Text="no", Value= "false"}
+                       },
+                       "seleccione una"
+                    )
+                </div>
                 <div>
                     @Html.TextBoxFor(x => x.UsuarioSup, new { autocomplete = "off", placeholder = "correo" })
                     @Html.ValidationMessageFor(x => x.UsuarioSup)
@@ -37,4 +57,5 @@
 </html>
 <script language="javascript" type="text/javascript">
     btnIngresar();
+    setFn();
 </script>

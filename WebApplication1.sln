@@ -5,11 +5,13 @@ VisualStudioVersion = 15.0.28010.2003
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication1", "WebApplication1\WebApplication1.csproj", "{926C7D57-5124-415F-813C-3D364F1362EB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Business", "Business\Business.csproj", "{06DEA11A-146D-483E-83F5-58B5B05472D5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Business", "Business\Business.csproj", "{06DEA11A-146D-483E-83F5-58B5B05472D5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data", "Data\Data.csproj", "{9515949F-6A00-455C-8D82-802C4CB24D89}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data", "Data\Data.csproj", "{9515949F-6A00-455C-8D82-802C4CB24D89}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entities", "Entities\Entities.csproj", "{F2B7801A-E192-46E4-852A-59981723F196}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Entities", "Entities\Entities.csproj", "{F2B7801A-E192-46E4-852A-59981723F196}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestProject1", "UnitTestProject1\UnitTestProject1.csproj", "{B297632B-2741-4860-8514-6BF1E0794800}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{F2B7801A-E192-46E4-852A-59981723F196}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F2B7801A-E192-46E4-852A-59981723F196}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F2B7801A-E192-46E4-852A-59981723F196}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B297632B-2741-4860-8514-6BF1E0794800}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B297632B-2741-4860-8514-6BF1E0794800}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B297632B-2741-4860-8514-6BF1E0794800}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B297632B-2741-4860-8514-6BF1E0794800}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
